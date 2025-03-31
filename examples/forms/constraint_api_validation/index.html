@@ -51,8 +51,6 @@
         const emailInput = document.getElementById("email");
         const passwordInput = document.getElementById("password");
 
-        console.log(emailInput.validity);
-
         if(emailInput.validity.valueMissing) {
           emailInput.setCustomValidity("Email is required.");
           emailInput.reportValidity();
