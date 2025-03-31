@@ -58,15 +58,13 @@
     document.addEventListener("DOMContentLoaded", function () {
       const myForm = document.getElementById("my-form");
 
-      myForm.addEventListener("submit", function (event) {
-        event.preventDefault();
+      const emailInput = document.getElementById("email");
+      const emailErrorInput = document.getElementById("email-error");
 
-        const emailInput = document.getElementById("email");
-        const emailErrorInput = document.getElementById("email-error");
+      const passwordInput = document.getElementById("password");
+      const passwordErrorInput = document.getElementById("password-error");
 
-        const passwordInput = document.getElementById("password");
-        const passwordErrorInput = document.getElementById("password-error");
-
+      emailInput.addEventListener("input", function () {
         if (emailInput.validity.valueMissing) {
           emailErrorInput.textContent = "Email is required.";
         }
@@ -76,7 +74,9 @@
         else if (emailInput.validity.valid) {
           emailErrorInput.textContent = ""; // Clear any previous custom message
         }
+      });
 
+      passwordInput.addEventListener("input", function () {
         if (passwordInput.validity.valueMissing) {
           passwordErrorInput.textContent = "Password is required.";
         }
@@ -89,6 +89,10 @@
         else if (passwordInput.validity.valid) {
           passwordErrorInput.textContent = "";
         }
+      });
+
+      myForm.addEventListener("submit", function (event) {
+        event.preventDefault();
 
         if (myForm.checkValidity()) {
           alert("Success");
