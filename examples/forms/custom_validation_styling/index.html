@@ -62,32 +62,32 @@
         event.preventDefault();
 
         const emailInput = document.getElementById("email");
-        const emailErrorInput = document.getElementById("email-error");
+        const emailErrorContainer = document.getElementById("email-error");
 
         const passwordInput = document.getElementById("password");
-        const passwordErrorInput = document.getElementById("password-error");
+        const passwordErrorContainer = document.getElementById("password-error");
 
         if (emailInput.validity.valueMissing) {
-          emailErrorInput.textContent = "Email is required.";
+          emailErrorContainer.textContent = "Email is required.";
         }
         else if (emailInput.validity.typeMismatch) {
-          emailErrorInput.textContent = "Please enter a valid email address.";
+          emailErrorContainer.textContent = "Please enter a valid email address.";
         }
         else if (emailInput.validity.valid) {
-          emailErrorInput.textContent = ""; // Clear any previous custom message
+          emailErrorContainer.textContent = ""; // Clear any previous custom message
         }
 
         if (passwordInput.validity.valueMissing) {
-          passwordErrorInput.textContent = "Password is required.";
+          passwordErrorContainer.textContent = "Password is required.";
         }
         else if (passwordInput.validity.tooShort) {
-          passwordErrorInput.textContent = `Password must be at least ${passwordInput.minLength} characters long.`;
+          passwordErrorContainer.textContent = `Password must be at least ${passwordInput.minLength} characters long.`;
         }
         else if (passwordInput.validity.patternMismatch) {
-          passwordErrorInput.textContent = "Password must contain at least one uppercase letter, one number, and one special character.";
+          passwordErrorContainer.textContent = "Password must contain at least one uppercase letter, one number, and one special character.";
         }
         else if (passwordInput.validity.valid) {
-          passwordErrorInput.textContent = "";
+          passwordErrorContainer.textContent = "";
         }
 
         if (myForm.checkValidity()) {
