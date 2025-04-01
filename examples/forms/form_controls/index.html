@@ -11,13 +11,17 @@
       }
 
       div.container {
+        /* These first three style rules center the div */
         max-width: fit-content;
         margin-left: auto;
         margin-right: auto;
+        /* End div centering */
+
         padding: 0 2rem 1.2rem 2rem;
         background-color: #f8f9fa;
         border-radius: 8px;
         border: 1px solid #ccc;
+        /* Box shadow to make the element pop */
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         margin-top: 2rem;
       }
@@ -29,10 +33,10 @@
       }
 
       #my-form label.checkbox-label {
-        display: inline-block !important;
+        display: inline-block;
       }
 
-      #my-form input[type]:not(reset) {
+      #my-form input {
         display: block;
         border: 1px solid #ccc;
         border-radius: 4px;
@@ -43,10 +47,10 @@
       }
 
       #my-form input[type="checkbox"] {
-        display: inline-block !important;
+        display: inline-block;
         margin-right: 1em;
         margin-left: 0.5em;
-        width: auto !important;
+        width: auto;
       }
 
       #my-form select {
@@ -126,7 +130,7 @@
             <select id="role" name="role">
               <option value="admin">Admin</option>
               <option value="user">User</option>
-              <option value="guest">Guest</option>
+              <option value="guest" selected>Guest</option>
             </select>
           </label>
         </div>
