@@ -68,6 +68,10 @@
           passwordInput.reportValidity();
           return;
         }
+        else if(passwordInput.validity.tooShort) {
+          passwordInput.setCustomValidity(`Password must be at least ${passwordInput.minLength} characters long.`);
+          passwordInput.reportValidity();
+        }
         else if(passwordInput.validity.valid) {
           passwordInput.setCustomValidity("");
         }
