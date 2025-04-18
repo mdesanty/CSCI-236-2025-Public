@@ -90,6 +90,14 @@
           passwordErrorContainer.textContent = "";
         }
 
+        emailInput.addEventListener("input", function () {
+          emailErrorContainer.textContent = "";
+        });
+
+        passwordInput.addEventListener("input", function () {
+          passwordErrorContainer.textContent = "";
+        });
+
         if (myForm.checkValidity()) {
           alert("Success");
         }
